@@ -1,0 +1,32 @@
+{
+  "name": "magic-toolbox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robhhr/magic-toolbox.git"
+  },
+  "author": "Roberto H.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robhhr/magic-toolbox/issues"
+  },
+  "homepage": "https://github.com/robhhr/magic-toolbox#readme",
+  "dependencies": {
+    "all": "0.0.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-eslint": "^6.0.0",
+    "gulp-prettyerror": "^1.2.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-terser": "^1.2.0",
+    "gulp-uglifycss": "^1.1.0"
+  }
+}
