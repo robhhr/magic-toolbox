@@ -1,0 +1,1 @@
+{"version":3,"sources":["_typography.scss"],"names":[],"mappings":"AAAA;EACI,UAAU,EAAA","file":"../sass/style.min.css","sourcesContent":["p {\r\n    color: red;\r\n}"]}
