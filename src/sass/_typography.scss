@@ -1,3 +1,26 @@
-p {
-    color: red;
+.title-animated {
+    animation: typewriter 5s steps(40) 1s 1 normal both,
+    blinkTextCursor 500ms steps(40) infinite normal;
+    overflow: hidden;
+    white-space: nowrap;
+    color: black;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+}
+
+@keyframes typewriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 16em;
+    }
+}
+
+@keyframes blinkTextCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, 0.75);
+    }
+    to {
+        border-right-color: transparent;
+    }
 }
