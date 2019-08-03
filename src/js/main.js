@@ -1,3 +1,4 @@
+// Temperature converter
 const celsiusData = document.querySelector('.celsius > input');
 const fahrenheitData = document.querySelector('.fahrenheit > input');
 
@@ -23,3 +24,31 @@ function temperature() {
 }
 
 temperature();
+
+//TODO List
+let listItems = [];
+
+function addItems(text) {
+    const todo = {
+        text,
+        id: Date.now(),
+        checked: false,
+    };
+    listItems.push(todo);
+    
+    const theList = document.querySelector('.todo-list');
+
+    // append list items here
+};
+
+const form = document.querySelector('.todo-form');
+form.addEventListener('submit', event => {
+    event.preventDefault();
+    const input = document.querySelector('.todo-input');
+    const text = input.value.trim();
+    if (text !== '') {
+        addItems(text);
+        input.value = '';
+        input.focus();
+    };
+});
