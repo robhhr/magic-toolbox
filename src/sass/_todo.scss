@@ -1,0 +1,28 @@
+input[type="text"] {
+    outline: 0;
+    border: none;
+}
+
+button {
+    outline: 0;
+    border: none;
+}
+
+.tasksBoard {
+    display: none;
+}
+
+ul {
+    list-style: none;
+    li {
+        // border-bottom: 1px solid #53BDFF;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+.delete {
+    cursor: pointer;
+}

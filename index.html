@@ -21,6 +21,18 @@
                 <input type="number" placeholder="F">
             </div>
         </div>
+        <div class="todo">
+            <h1>TO-DO LIST</h1>
+            <form class="todo-form" action="index.html" method="post">
+              <input type="text" placeholder="new task" name="task">
+              <button type="submit"><strong>add item</strong></button>
+            </form>
+            <div class="tasksBoard">
+              <ul class="list-container">
+              </ul>
+              <a id="clear-list">Clear</a>
+            </div>
+        </div>
     </main>
     <script src="./build/js/main.min.js"></script>
 </body>
