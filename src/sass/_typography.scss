@@ -1,3 +1,7 @@
+html, body {
+    font-size: 16px;
+}
+
 .title-animated {
     animation: typewriter 5s steps(40) 1s 1 normal both,
     blinkTextCursor 500ms steps(40) infinite normal;
