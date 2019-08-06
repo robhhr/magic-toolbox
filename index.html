@@ -12,28 +12,50 @@
     <header>
         <h1 class="title-animated">What can I do for you?</h1>
     </header>
-
-    <!-- Weather -->
-    <div class="location">
-        <h1 class="location-timezone">Timezone</h1>
-        <canvas class="icon" width="128" height="128"></canvas>
-        <p>Icon</p>
-    </div>
-    <div class="weather">
-        <div class="degree-section">
-            <h2 class="weather-degree">34</h2><span class="weather-unit"> F</span>
-            <div class="weather-description">It's friggin cold</div>
-        </div>
-    </div>
     <main>
+    <!-- Weather -->
+        <div class="location">
+            <h1 class="location-timezone">Timezone</h1>
+            <canvas class="icon" width="128" height="128"></canvas>
+            <p>Icon</p>
+        </div>
+        <div class="weather">
+            <div class="degree-section">
+                <h2 class="weather-degree">34</h2><span class="weather-unit"> F</span>
+                <div class="weather-description">It's friggin cold</div>
+            </div>
+        </div>
+    <!-- Temperature converter -->
         <div class="temperature">
             <div class="celsius">
-                <input type="number" placeholder="C">
+                <input type="number" placeholder="C" id="input-temp">
             </div>
             <div class="fahrenheit">
-                <input type="number" placeholder="F">
+                <input type="number" placeholder="F" id="input-temp">
             </div>
         </div>
+    <!-- Unit converter -->
+        <div class="unit">
+            <div class="centimeters">
+                <input type="number" placeholder="Centimeters">
+            </div>
+            <div class="meters">
+                <input type="number" placeholder="Meters">
+            </div>
+            <div class="feet">
+                <input type="number" placeholder="Feet">
+            </div>
+            <div class="inches">
+                <input type="number" placeholder="Inches">
+            </div>
+            <div class="kilometers">
+                <input type="number" placeholder="Kilometers">
+            </div>
+            <div class="miles">
+                <input type="number" placeholder="Miles">
+            </div>
+        </div>
+    <!-- To-do list -->
         <div class="todo">
             <h1>TO-DO LIST</h1>
             <form class="todo-form" action="index.html" method="post">

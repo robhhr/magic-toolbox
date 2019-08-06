@@ -2,12 +2,12 @@
 //     display: flex;
 // }
 
-// #input-temp {
-//     border: none;
-//     -moz-appearance:textfield;
-// }
+#input-temp {
+    border: none;
+    -moz-appearance: textfield;
+}
 
-// input::-webkit-outer-spin-button,
-// input::-webkit-inner-spin-button {
-//     -webkit-appearance: none;
-// }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
