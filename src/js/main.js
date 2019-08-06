@@ -1,3 +1,56 @@
+/***** Weather *****/
+window.addEventListener('load', () => {
+    let longitude;
+    let latitude;
+    let temperatureDescription = document.querySelector('.weather-description');
+    let temperatureDegree = document.querySelector('.weather-degree');
+    let locationT = document.querySelector('.location-timezone');
+    let degreeSection = document.querySelector('.weather');
+    let degreeSpan = document.querySelector('.weather-unit')
+
+
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            longitude = position.coords.longitude;
+            latitude = position.coords.latitude;
+            const proxy = 'https://cors-anywhere.herokuapp.com/';
+            const API = `${proxy}https://api.darksky.net/forecast/ec1df8487dd99e172a69dc18ab26306a/${latitude},${longitude}`;
+            
+            fetch(API).then(response => {
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                const {temperature, summary, icon} = data.currently;
+                temperatureDegree.textContent = temperature;
+                temperatureDescription.textContent = summary;
+                locationT.textContent = data.timezone;
+                let toCelsius = (temperature - 32) * (5/9)
+                setIcons(icon, document.querySelector('.icon'));
+
+                degreeSection.addEventListener('click', () => {
+                    if (degreeSpan.textContent === "F"){
+                        degreeSpan.textContent = "C";
+                        temperatureDegree.textContent = Math.floor(toCelsius);
+                    } else {
+                        degreeSpan.textContent = "F";
+                        temperatureDegree.textContent = temperature;
+                    }
+                })
+            });
+        });
+
+    } else {
+        h1.textContent = "enable your location to see your current weather"
+    }
+    function setIcons(icon, iconID) {
+        const skycons = new Skycons({color:"black"});
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play();
+        return skycons.set(iconID, Skycons[currentIcon]);
+    }
+});
+
 /***** Temperature converter *****/
 const celsiusData = document.querySelector('.celsius > input');
 const fahrenheitData = document.querySelector('.fahrenheit > input');
