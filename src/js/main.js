@@ -20,7 +20,6 @@ window.addEventListener('load', () => {
                 return response.json();
             })
             .then(data => {
-                console.log(data);
                 const {temperature, summary, icon} = data.currently;
                 temperatureDegree.textContent = temperature;
                 temperatureDescription.textContent = summary;
@@ -77,6 +76,34 @@ function temperature() {
 }
 
 temperature();
+
+/***** Unit Converter *****/
+const centimeters = document.querySelector('.centimeters > input');
+const meters = document.querySelector('.meters > input');
+const feet = document.querySelector('.feet > input');
+const inches = document.querySelector('.inches > input');
+const kilometers = document.querySelector('.kilometers > input');
+const miles = document.querySelector('.miles > input');
+
+function centimetersToUnit() {
+    const cmData = centimeters.value;
+    const mtData = (cmData/100);
+    const ftData = (cmData/30.48);
+    const inchData = (cmData/2.54);
+    const kmData = (cmData/100000);
+    const mlData = (cmData/160934.4);
+    meters.value = mtData;
+    feet.value = Math.round(ftData*100)/100;
+    inches.value = Math.round(inchData*100)/100;
+    kilometers.value = kmData;
+    miles.value = mlData;
+};
+
+function converter() {
+    centimeters.addEventListener('input', centimetersToUnit);
+}
+
+converter();
 
 /***** TODO List *****/
 loadEvents();
