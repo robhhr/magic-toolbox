@@ -96,7 +96,7 @@ function centimetersToUnit() {
     feet.value = Math.round(ftData*100)/100;
     inches.value = Math.round(inchData*100)/100;
     kilometers.value = kmData;
-    miles.value = Math.floor(mlData*10000)/10000;
+    miles.value = Math.round(mlData*10000)/10000;
 };
 
 function metersToUnit() {
@@ -110,12 +110,27 @@ function metersToUnit() {
     feet.value = ftData;
     inches.value = Math.round(inchData*100)/100;
     kilometers.value = kmData;
-    miles.value = Math.floor(mlData*10000)/10000;
+    miles.value = Math.round(mlData*10000)/10000;
+}
+
+function feetToUnit() {
+    const ftData = feet.value;
+    const cmData = (ftData*30.48);
+    const mtData = (ftData/3.281);
+    const inchData = (ftData*12);
+    const kmData = (ftData/3280.84);
+    const mlData = (ftData/5280);
+    centimeters.value = cmData;
+    meters.value = Math.round(mtData*100)/100;
+    inches.value = Math.round(inchData*100)/100;
+    kilometers.value = Math.round(kmData*10000)/10000;
+    miles.value = Math.round(mlData*10000)/10000;
 }
 
 function converter() {
     centimeters.addEventListener('input', centimetersToUnit);
     meters.addEventListener('input', metersToUnit);
+    feet.addEventListener('input', feetToUnit);
 }
 
 converter();
