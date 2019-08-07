@@ -155,12 +155,27 @@ function kilometersToUnit() {
     miles.value = Math.round(mlData*100)/100;
 };
 
+function milesToUnit() {
+    const mlData = miles.value;
+    const cmData = mlData*160934.4;
+    const mtData = mlData*1609.344;
+    const ftData = mlData*5280;
+    const inchData = mlData*63360;
+    const kmData = mlData*1.609;
+    centimeters.value = cmData;
+    meters.value = Math.round(mtData*100)/100;
+    feet.value = ftData;
+    inches.value = inchData;
+    kilometers.value = Math.round(kmData*100)/100;
+};
+
 function converter() {
     centimeters.addEventListener('input', centimetersToUnit);
     meters.addEventListener('input', metersToUnit);
     feet.addEventListener('input', feetToUnit);
     inches.addEventListener('input', inchesToUnit);
     kilometers.addEventListener('input', kilometersToUnit);
+    miles.addEventListener('input', milesToUnit);
 };
 
 converter();
