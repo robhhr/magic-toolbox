@@ -2,9 +2,12 @@ html, body {
     font-size: 16px;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Athiti&display=swap');
+
 .title-animated {
     animation: typewriter 5s steps(40) 1s 1 normal both,
     blinkTextCursor 500ms steps(40) infinite normal;
+    animation-iteration-count: infinite;
     overflow: hidden;
     white-space: nowrap;
     color: black;

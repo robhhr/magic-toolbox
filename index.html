@@ -10,11 +10,18 @@
 </head>
 <body>
     <header>
-        <h1 class="title-animated">What can I do for you?</h1>
+        <h1 class="title-animated">What can I do for you today?</h1>
+        <nav>
+            <ul>
+                <li><a href="#location">Weather</a></li>
+                <li><a href="#uc">Unit convertor</a></li>
+                <li><a href="#todo">To-Do list</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
     <!-- Weather -->
-        <div class="location">
+        <div id="location" class="location">
             <h1 class="location-timezone">Timezone</h1>
             <canvas class="icon" width="128" height="128"></canvas>
             <p>Icon</p>
@@ -26,6 +33,7 @@
             </div>
         </div>
     <!-- Temperature converter -->
+    <div id="uc" class="unit-convertor">
         <div class="temperature">
             <div class="celsius">
                 <input type="number" placeholder="C" id="input-temp">
@@ -61,8 +69,9 @@
                 <input type="number" placeholder="Miles">
             </div>
         </div>
+    </div>
     <!-- To-do list -->
-        <div class="todo">
+        <div id="todo" class="todo">
             <h1>TO-DO LIST</h1>
             <form class="todo-form" action="index.html" method="post">
               <input type="text" placeholder="new task" name="task">

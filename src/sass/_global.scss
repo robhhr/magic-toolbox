@@ -31,7 +31,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	box-sizing: border-box;
-	background-color: grey;
+	background: linear-gradient((lighten(#e66465, 25%)), (lighten(#9198e5, 15%)));
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
 }
 ol, ul {
 	list-style: none;
