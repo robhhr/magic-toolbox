@@ -182,14 +182,13 @@ converter();
 
 /***** TODO List *****/
 loadEvents();
-// load every event in the page
+
 function loadEvents() {
     document.querySelector('.todo-form').addEventListener('submit', submit);
     document.querySelector('#clear-list').addEventListener('click', clearList);
     document.querySelector('.list-container').addEventListener('click', deleteOrTick);
 };
 
-// submit data function
 function submit(event) {
     event.preventDefault();
     let taskList;
@@ -199,7 +198,6 @@ function submit(event) {
     input.value = '';
 };
 
-// add tasks
 function addTask(task) {
     let ul = document.querySelector('.list-container');
     let li = document.createElement('li');
@@ -208,12 +206,10 @@ function addTask(task) {
     document.querySelector('.tasksBoard').style.display = 'block';
 };
 
-// clear the list
 function clearList(event) {
     let ul = document.querySelector('.list-container').innerHTML = '';
 };
 
-// deleteTick
 function deleteOrTick(event) {
     if (event.target.className == 'delete')
     deleteTask(event);
@@ -222,14 +218,12 @@ function deleteOrTick(event) {
     };
 };
 
-// delete task
 function deleteTask(event) {
     let remove = event.target.parentNode;
     let parentNode = remove.parentNode;
     parentNode.removeChild(remove);
 };
 
-// tick a task
 function tickTask(event){
     const task = event.target.nextSibling;
     if (event.target.checked) {
@@ -242,11 +236,142 @@ function tickTask(event){
 };
 
 /***** Calculator *****/
-let calculatorScreen = document.querySelector('.screen');
+window.onload = function() {
+    let buttons = document.getElementsByTagName('span');
+    let result = document.querySelectorAll('.result p')[0];
+    let clear = document.getElementsByClassName('clear')[0];
+    let equation = [];
+    let orange = false;
 
-document.addEventListener('click', function(event) {
-    if (!event.target.matches('.btn')) return;
-    event.preventDefault();
-    let calculatorContent = event.target.innerHTML;
-    calculatorScreen.innerText = calculatorContent;
-}, false);
+    for (var i = 0; i < buttons.length; i += 1) {
+      if (buttons[i].innerHTML === '=') {
+        buttons[i].addEventListener("click", calculate(i));
+      } else if (buttons[i].innerHTML === '+/-') {
+        buttons[i].addEventListener("click", invert(i));
+      } else if (buttons[i].innerHTML === '%') {
+        buttons[i].addEventListener("click", percent(i));
+      } else if (buttons[i].innerHTML === 'AC') {
+        equation = [];
+      } else {
+        buttons[i].addEventListener("click", addValue(i));
+      };
+    };
+
+    clear.onclick = function() {
+        result.innerHTML = '';
+        equation = [];
+        orange = false;
+    };
+
+    function addValue(i) {
+      return function() {
+        if (buttons[i].innerHTML === '÷') {
+          clicked(this);
+          ifOperatorThanSwap('/');
+        } else if (buttons[i].innerHTML === 'x') {
+          clicked(this);
+          ifOperatorThanSwap('*');
+        } else if (buttons[i].innerHTML === '+') {
+          clicked(this);
+          ifOperatorThanSwap('+');
+        } else if (buttons[i].innerHTML === '-') {
+          clicked(this);
+          ifOperatorThanSwap('-');
+        } else {
+          removeClicked();
+          if (checkIfNum(equation[equation.length - 1])) {
+            equation = [];
+            equation.push(buttons[i].innerHTML);
+            orange = true;
+          } else {
+            equation.push(buttons[i].innerHTML);
+          }
+          if (orange) {
+            result.innerHTML = buttons[i].innerHTML;
+          } else {
+            result.innerHTML += buttons[i].innerHTML;
+          }
+          orange = false;
+        }
+      };
+    }
+
+    function clicked(i) {
+      removeClicked(i);
+      i.classList.add('clicked');
+    }
+
+    function removeClicked(i) {
+      var elems = document.querySelectorAll(".clicked");
+      [].forEach.call(elems, function(el) {
+        el.classList.remove("clicked");
+      });
+    }
+
+    function calculate(i) {
+      return function() {
+        if (equation.length == 0) {
+          return;
+        } else {
+          var answer = eval(equation.join(''));
+          if (answer % 1 === 0) {
+            result.innerHTML = answer;
+          } else {
+            result.innerHTML = answer.toFixed(4);
+          }
+          equation = [];
+          equation.push(answer);
+          orange = false;
+        }
+      };
+    }
+
+    function invert(i) {
+      return function() {
+        if (equation.length == 0) {
+          return;
+        } else {
+          var number = result.innerHTML;
+          popNumberOfDigits(number);
+          var invert = number * -1;
+          equation.push(invert);
+          result.innerHTML = invert;
+        }
+      }
+    }
+
+    function percent(i) {
+      return function() {
+        var number = result.innerHTML;
+        popNumberOfDigits(number);
+        var percent = number * 0.01;
+        equation.push(percent);
+        result.innerHTML = percent.toFixed(2);
+      }
+    }
+
+    function ifOperatorThanSwap(str) {
+      if (!orange) {
+        equation.push(str);
+        orange = true;
+      } else {
+        equation.pop();
+        equation.push(str);
+      }
+    }
+
+    function checkIfNum(v) {
+      if (typeof v == 'string') {
+        return false;
+      } else if (typeof v == 'number') {
+        return true;
+      }
+    }
+
+    function popNumberOfDigits(number) {
+      var arr = number.split('');
+      for (i = 0; i < arr.length; i++) {
+        equation.pop();
+      }
+    }
+  };
