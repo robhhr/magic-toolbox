@@ -2,10 +2,20 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    width: 80%;
+    margin: 0 auto;
+    .btn {
+        border-radius: 50%;
+        padding: 20px;
+        margin: 4px auto;
+        width: 75%;
+    }
 }
 
 .btn.screen {
     grid-column: 1 / 5;
+    background-color: transparent;
+    text-align: right;
 }
 
 .btn.zero {

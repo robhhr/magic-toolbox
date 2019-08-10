@@ -240,3 +240,13 @@ function tickTask(event){
     task.style.color = "#2f4f4f";
     };
 };
+
+/***** Calculator *****/
+let calculatorScreen = document.querySelector('.screen');
+
+document.addEventListener('click', function(event) {
+    if (!event.target.matches('.btn')) return;
+    event.preventDefault();
+    let calculatorContent = event.target.innerHTML;
+    calculatorScreen.innerText = calculatorContent;
+}, false);
