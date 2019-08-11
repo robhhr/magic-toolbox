@@ -1,35 +1,54 @@
 /***** Toggle sections *****/
-document.getElementById('weather-menu').addEventListener("click", function() {
-  document.getElementsByClassName('location')[0].style.display = "inline-block";
-  document.getElementsByClassName('weather')[0].style.display = "flex";
-  document.getElementsByClassName('unit-convertor')[0].style.display = "none";
-  document.getElementsByClassName('todo')[0].style.display = "none";
-  document.getElementsByClassName('calculator')[0].style.display = "none";
-});
+const weatherMenu = document.getElementById('weather-menu'),
+      unitMenu = document.getElementById('unit-menu'),
+      todoMenu = document.getElementById('todo-menu'),
+      calculatorMenu = document.getElementById('calculator-menu'),
+      locationHandler = document.getElementsByClassName('location')[0],
+      weatherHandler = document.getElementsByClassName('weather')[0],
+      unitHandler = document.getElementsByClassName('unit-convertor')[0],
+      todoHandler = document.getElementsByClassName('todo')[0],
+      calculatorHandler = document.getElementsByClassName('calculator')[0];
 
-document.getElementById('unit-menu').addEventListener("click", function() {
-  document.getElementsByClassName('location')[0].style.display = "none";
-  document.getElementsByClassName('weather')[0].style.display = "none";
-  document.getElementsByClassName('unit-convertor')[0].style.display = "inline-block";
-  document.getElementsByClassName('todo')[0].style.display = "none";
-  document.getElementsByClassName('calculator')[0].style.display = "none";
-});
+function hideWeatherMenu() {
+  locationHandler.style.display = "inline-block";
+  weatherHandler.style.display = "flex";
+  unitHandler.style.display = "none";
+  todoHandler.style.display = "none";
+  calculatorHandler.style.display = "none";
+};
 
-document.getElementById('todo-menu').addEventListener("click", function() {
-  document.getElementsByClassName('location')[0].style.display = "none";
-  document.getElementsByClassName('weather')[0].style.display = "none";
-  document.getElementsByClassName('unit-convertor')[0].style.display = "none";
-  document.getElementsByClassName('todo')[0].style.display = "initial";
-  document.getElementsByClassName('calculator')[0].style.display = "none";
-});
+function hideUnitMenu() {
+  locationHandler.style.display = "none";
+  weatherHandler.style.display = "none";
+  unitHandler.style.display = "inline-block";
+  todoHandler.style.display = "none";
+  calculatorHandler.style.display = "none";
+};
 
-document.getElementById('calculator-menu').addEventListener("click", function() {
-  document.getElementsByClassName('location')[0].style.display = "none";
-  document.getElementsByClassName('weather')[0].style.display = "none";
-  document.getElementsByClassName('unit-convertor')[0].style.display = "none";
-  document.getElementsByClassName('todo')[0].style.display = "none";
-  document.getElementsByClassName('calculator')[0].style.display = "initial";
-});
+function hideTodoMenu() {
+  locationHandler.style.display = "none";
+  weatherHandler.style.display = "none";
+  unitHandler.style.display = "none";
+  todoHandler.style.display = "initial";
+  calculatorHandler.style.display = "none";
+};
+
+function hideCalculatorMenu() {
+  locationHandler.style.display = "none";
+  weatherHandler.style.display = "none";
+  unitHandler.style.display = "none";
+  todoHandler.style.display = "none";
+  calculatorHandler.style.display = "initial";
+};
+
+function hideShowMenus() {
+  weatherMenu.addEventListener('click', hideWeatherMenu);
+  unitMenu.addEventListener('click', hideUnitMenu);
+  todoMenu.addEventListener('click', hideTodoMenu);
+  calculatorMenu.addEventListener('click', hideCalculatorMenu);
+};
+
+hideShowMenus();
 
 /***** Weather *****/
 window.addEventListener('load', () => {
