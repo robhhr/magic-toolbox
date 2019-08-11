@@ -10,35 +10,55 @@ const weatherMenu = document.getElementById('weather-menu'),
       calculatorHandler = document.getElementsByClassName('calculator')[0];
 
 function hideWeatherMenu() {
-  locationHandler.style.display = "inline-block";
-  weatherHandler.style.display = "flex";
-  unitHandler.style.display = "none";
-  todoHandler.style.display = "none";
-  calculatorHandler.style.display = "none";
+  if (locationHandler.style.display === 'none') {
+    locationHandler.style.display = 'inline-block';
+    } else {
+    locationHandler.style.display = 'none';
+    };
+  if (weatherHandler.style.display === 'none') {
+    weatherHandler.style.display = 'inline-block';
+    } else {
+    weatherHandler.style.display = 'none';
+    };
+  unitHandler.style.display = 'none';
+  todoHandler.style.display = 'none';
+  calculatorHandler.style.display = 'none';
 };
 
 function hideUnitMenu() {
-  locationHandler.style.display = "none";
-  weatherHandler.style.display = "none";
-  unitHandler.style.display = "inline-block";
-  todoHandler.style.display = "none";
-  calculatorHandler.style.display = "none";
+  if (unitHandler.style.display === 'none') {
+    unitHandler.style.display = 'inline-block';
+    } else {
+    unitHandler.style.display = 'none';
+    };
+  locationHandler.style.display = 'none';
+  weatherHandler.style.display = 'none';
+  todoHandler.style.display = 'none';
+  calculatorHandler.style.display = 'none';
 };
 
 function hideTodoMenu() {
-  locationHandler.style.display = "none";
-  weatherHandler.style.display = "none";
-  unitHandler.style.display = "none";
-  todoHandler.style.display = "initial";
-  calculatorHandler.style.display = "none";
+  if (todoHandler.style.display === 'none') {
+    todoHandler.style.display = 'initial';
+    } else {
+    todoHandler.style.display = 'none';
+    };
+  locationHandler.style.display = 'none';
+  weatherHandler.style.display = 'none';
+  unitHandler.style.display = 'none';
+  calculatorHandler.style.display = 'none';
 };
 
 function hideCalculatorMenu() {
-  locationHandler.style.display = "none";
-  weatherHandler.style.display = "none";
-  unitHandler.style.display = "none";
-  todoHandler.style.display = "none";
-  calculatorHandler.style.display = "initial";
+  if (calculatorHandler.style.display === 'none') {
+    calculatorHandler.style.display = 'initial';
+    } else {
+    calculatorHandler.style.display = 'none';
+    };
+  locationHandler.style.display = 'none';
+  weatherHandler.style.display = 'none';
+  unitHandler.style.display = 'none';
+  todoHandler.style.display = 'none';
 };
 
 function hideShowMenus() {
