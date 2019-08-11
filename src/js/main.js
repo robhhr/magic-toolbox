@@ -2,13 +2,34 @@
 document.getElementById('weather-menu').addEventListener("click", function() {
   document.getElementsByClassName('location')[0].style.display = "inline-block";
   document.getElementsByClassName('weather')[0].style.display = "flex";
+  document.getElementsByClassName('unit-convertor')[0].style.display = "none";
+  document.getElementsByClassName('todo')[0].style.display = "none";
+  document.getElementsByClassName('calculator')[0].style.display = "none";
 });
 
 document.getElementById('unit-menu').addEventListener("click", function() {
+  document.getElementsByClassName('location')[0].style.display = "none";
+  document.getElementsByClassName('weather')[0].style.display = "none";
   document.getElementsByClassName('unit-convertor')[0].style.display = "inline-block";
+  document.getElementsByClassName('todo')[0].style.display = "none";
+  document.getElementsByClassName('calculator')[0].style.display = "none";
 });
 
+document.getElementById('todo-menu').addEventListener("click", function() {
+  document.getElementsByClassName('location')[0].style.display = "none";
+  document.getElementsByClassName('weather')[0].style.display = "none";
+  document.getElementsByClassName('unit-convertor')[0].style.display = "none";
+  document.getElementsByClassName('todo')[0].style.display = "initial";
+  document.getElementsByClassName('calculator')[0].style.display = "none";
+});
 
+document.getElementById('calculator-menu').addEventListener("click", function() {
+  document.getElementsByClassName('location')[0].style.display = "none";
+  document.getElementsByClassName('weather')[0].style.display = "none";
+  document.getElementsByClassName('unit-convertor')[0].style.display = "none";
+  document.getElementsByClassName('todo')[0].style.display = "none";
+  document.getElementsByClassName('calculator')[0].style.display = "initial";
+});
 
 /***** Weather *****/
 window.addEventListener('load', () => {
