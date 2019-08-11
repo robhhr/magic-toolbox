@@ -1,3 +1,15 @@
+/***** Toggle sections *****/
+document.getElementById('weather-menu').addEventListener("click", function() {
+  document.getElementsByClassName('location')[0].style.display = "inline-block";
+  document.getElementsByClassName('weather')[0].style.display = "flex";
+});
+
+document.getElementById('unit-menu').addEventListener("click", function() {
+  document.getElementsByClassName('unit-convertor')[0].style.display = "inline-block";
+});
+
+
+
 /***** Weather *****/
 window.addEventListener('load', () => {
     let longitude;
@@ -267,19 +279,19 @@ window.onload = function() {
       return function() {
         if (buttons[i].innerHTML === '÷') {
           clicked(this);
-          ifOperatorThanSwap('/');
+          changeOperators('/');
         } else if (buttons[i].innerHTML === 'x') {
           clicked(this);
-          ifOperatorThanSwap('*');
+          changeOperators('*');
         } else if (buttons[i].innerHTML === '+') {
           clicked(this);
-          ifOperatorThanSwap('+');
+          changeOperators('+');
         } else if (buttons[i].innerHTML === '-') {
           clicked(this);
-          ifOperatorThanSwap('-');
+          changeOperators('-');
         } else {
           removeClicked();
-          if (checkIfNum(equation[equation.length - 1])) {
+          if (checkType(equation[equation.length - 1])) {
             equation = [];
             equation.push(buttons[i].innerHTML);
             orange = true;
@@ -332,7 +344,7 @@ window.onload = function() {
           return;
         } else {
           var number = result.innerHTML;
-          popNumberOfDigits(number);
+          addToOperations(number);
           var invert = number * -1;
           equation.push(invert);
           result.innerHTML = invert;
@@ -343,14 +355,14 @@ window.onload = function() {
     function percent(i) {
       return function() {
         var number = result.innerHTML;
-        popNumberOfDigits(number);
+        addToOperations(number);
         var percent = number * 0.01;
         equation.push(percent);
         result.innerHTML = percent.toFixed(2);
       }
     }
 
-    function ifOperatorThanSwap(str) {
+    function changeOperators(str) {
       if (!orange) {
         equation.push(str);
         orange = true;
@@ -360,7 +372,7 @@ window.onload = function() {
       }
     }
 
-    function checkIfNum(v) {
+    function checkType(v) {
       if (typeof v == 'string') {
         return false;
       } else if (typeof v == 'number') {
@@ -368,7 +380,7 @@ window.onload = function() {
       }
     }
 
-    function popNumberOfDigits(number) {
+    function addToOperations(number) {
       var arr = number.split('');
       for (i = 0; i < arr.length; i++) {
         equation.pop();
