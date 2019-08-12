@@ -1,6 +1,45 @@
+.title-section {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: 0 auto;
+    border-bottom: 1px solid $grey;
+}
+
+.title {
+    font-family: 'Poiret One';
+    font-size: 2.25rem;
+    text-transform: uppercase;
+    margin: 50px 0;
+    cursor: pointer;
+}
+
+.title-animated {
+    text-align: center;
+    color: black;
+    font-family: 'Athiti';
+    text-transform: uppercase;
+    font-size: 18px;
+    width: 260px;
+    align-self: center;
+    padding-bottom: 10px;
+}
+
+.curly-arrow {
+    background-image: url(../../images/arrow-pointer.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: rotate(90deg);
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    left: -50px;
+    bottom: 1px;
+}
+
 header {
     margin: 0 auto;
-    margin-top: 100%;
+    // margin-top: 100%;
 }
 
 ul {
