@@ -31,11 +31,12 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 	box-sizing: border-box;
-	// background: linear-gradient((lighten(#e66465, 25%)), (lighten(#85c1e9, 15%)));
 	display: flex;
 	flex-direction: column;
 	border: 12px solid $grey;
 	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
 	// background-image: url(../../images/pattern.svg);
 }
 
@@ -43,6 +44,19 @@ main {
 	display: flex;
 	justify-content: center;
 	margin: 100px 0;
+}
+
+footer {
+	text-align: end;
+	padding: 0 30px;
+	font-family: 'Athiti';
+	a {
+		text-decoration: none;
+		font-weight: bold;
+		&:visited {
+			color: $black;
+		}
+	}
 }
 
 ol, ul {
