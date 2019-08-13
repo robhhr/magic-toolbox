@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="title-section">
-        <h1 class="title">Magic Toolbox</h1>
+        <h1 id="title" class="title">Magic Toolbox</h1>
         <h2 class="title-animated">What do you want to do?</h2>
     </div>
     <header>
@@ -26,11 +26,25 @@
         </nav>
     </header>
     <main>
+    <!-- About -->
+    <section id="about" class="about">
+        <p>Magic Toolbox! is a multi-tool app designed with very useful everyday utilities:</p>
+        <ul class="about-list">
+            <li>- Digital Clock</li>
+            <li>- Weather</li>
+            <li>- Unit Convertor</li>
+            <li>- To-do List</li>
+            <li>- Digital calculator</li>
+        </ul>
+        <p>Made with JavaScript, Sass, HTML, Gulp</p>
+    </section>
     <!-- Clock -->
-        <div id="clock" class="clock">
-            <span id="hour"></span>
-            <span id="minute"></span>
-            <span id="second"></span>
+        <div class="clock-container">
+            <div id="clock" class="clock">
+                <span id="hour"></span>
+                <span id="minute"></span>
+                <span id="second"></span>
+            </div>
         </div>
     <!-- Weather -->
         <div id="location" class="location">
