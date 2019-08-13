@@ -1,14 +1,13 @@
 .title-section {
     display: flex;
     flex-direction: column;
-    position: relative;
+    // position: relative;
     margin: 0 auto;
-    border-bottom: 1px solid $grey;
 }
 
 .title {
-    font-family: 'Poiret One';
-    font-size: 2.25rem;
+    font-family: 'Barriecito';
+    font-size: 2.5rem;
     text-transform: uppercase;
     margin: 50px 0;
     cursor: pointer;
@@ -22,38 +21,63 @@
     font-size: 18px;
     width: 260px;
     align-self: center;
-    padding-bottom: 10px;
+    padding-bottom: 20px;
+    font-weight: bold;
+
 }
 
 .curly-arrow {
     background-image: url(../../images/arrow-pointer.svg);
     background-size: contain;
     background-repeat: no-repeat;
-    transform: rotate(90deg);
+    transform: rotate(120deg);
     height: 60px;
     width: 40px;
     position: absolute;
-    left: -50px;
-    bottom: 1px;
+    left: -45px;
+    bottom: 45px;
+    animation: blink-animation 1s steps(5, start) infinite;
+    -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+    to {
+    visibility: hidden;
+    }
+    }
+    @-webkit-keyframes blink-animation {
+    to {
+    visibility: hidden;
+    }
 }
 
 header {
     margin: 0 auto;
+    position: relative;
+    text-align: center;
     // margin-top: 100%;
 }
 
-ul {
-    display: flex;
-    flex-direction: column;
+.site-menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    line-height: 2;
     font-family: 'Athiti';
     text-transform: uppercase;
-    font-size: 18px;
+    font-size: 16px;
+    padding-right: 25px;
     li {
         a {
             color: $black;
             text-decoration: none;
+            transition: border-bottom 0.3s ease-in;
+
             &:visited {
                 color: $black;
+            }
+
+            &:hover {
+                border-bottom: 4px solid #000;
             }
         }
     }

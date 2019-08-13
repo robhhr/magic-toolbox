@@ -11,7 +11,7 @@ const weatherMenu = document.getElementById('weather-menu'),
 
 function hideWeatherMenu() {
   if (locationHandler.style.display === 'none') {
-    locationHandler.style.display = 'inline-block';
+    locationHandler.style.display = 'flex';
     } else {
     locationHandler.style.display = 'none';
     };
