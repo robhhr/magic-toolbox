@@ -1,3 +1,23 @@
+.temp-description {
+    font-family: 'Athiti';
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 5px 2px;
+}
+
+#input-temp, #input-conv {
+    border: 0.5px solid $grey;
+    border-radius: 5px;
+    padding: 5px;
+    color: darken($grey, 50%);
+    -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
 .unit-convertor {
     display: none;
 }
@@ -9,5 +29,14 @@
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+    }
+}
+
+.conv {
+    p {
+        font-family: 'Athiti';
+        font-size: 14px;
+        text-transform: uppercase;
+        padding: 5px 2px;
     }
 }
