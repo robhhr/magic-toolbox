@@ -1,13 +1,15 @@
 .clock-container {
-    height: 280px;
+    display: none;
+    // align-self: center;
+    padding-top: 80px;
 }
 
 .clock {
-    display: none;
     font-size: 3rem;
     font-family: 'Digital-7';
-    border: 3px solid $black;
+    border: 3px solid $darkgrey;
     padding: 30px;
     background-color: $grey;
-    color: $black;
+    color: $darkgrey;
+    border-radius: 5px;
 }

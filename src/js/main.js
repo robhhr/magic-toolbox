@@ -6,7 +6,7 @@ const aboutMenu = document.getElementById('title'),
       todoMenu = document.getElementById('todo-menu'),
       calculatorMenu = document.getElementById('calculator-menu'),
       aboutHandler = document.getElementsByClassName('about')[0],
-      clockHandler = document.getElementsByClassName('clock')[0],
+      clockHandler = document.getElementsByClassName('clock-container')[0],
       locationHandler = document.getElementsByClassName('location')[0],
       weatherHandler = document.getElementsByClassName('weather')[0],
       unitHandler = document.getElementsByClassName('unit-convertor')[0],
@@ -142,8 +142,7 @@ window.addEventListener('load', () => {
     let temperatureDegree = document.querySelector('.weather-degree');
     let locationT = document.querySelector('.location-timezone');
     let degreeSection = document.querySelector('.weather');
-    let degreeSpan = document.querySelector('.weather-unit')
-
+    let degreeSpan = document.querySelector('.weather-unit');
 
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(position => {
@@ -157,18 +156,18 @@ window.addEventListener('load', () => {
             })
             .then(data => {
                 const {temperature, summary, icon} = data.currently;
-                temperatureDegree.textContent = temperature;
+                temperatureDegree.textContent = `${temperature}`;
                 temperatureDescription.textContent = summary;
                 locationT.textContent = data.timezone;
                 let toCelsius = (temperature - 32) * (5/9)
                 setIcons(icon, document.querySelector('.icon'));
 
                 degreeSection.addEventListener('click', () => {
-                    if (degreeSpan.textContent === "F"){
-                        degreeSpan.textContent = "C";
+                    if (degreeSpan.textContent === "°F"){
+                        degreeSpan.textContent = "°C";
                         temperatureDegree.textContent = Math.floor(toCelsius);
                     } else {
-                        degreeSpan.textContent = "F";
+                        degreeSpan.textContent = "°F";
                         temperatureDegree.textContent = temperature;
                     }
                 })

@@ -1,6 +1,6 @@
 .todo {
     display: none;
-    height: 280px;
+    padding-top: 80px;
 }
 
 input[type="text"] {
@@ -19,9 +19,6 @@ button {
 
 ul {
     list-style: none;
-    li {
-        // border-bottom: 1px solid #53BDFF;
-    }
 }
 
 a {

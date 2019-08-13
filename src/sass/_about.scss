@@ -1,4 +1,17 @@
 .about {
     // display: none;
-    height: 280px;
+    font-family: 'Athiti';
+    line-height: 2;
+    padding: 50px;
+}
+
+.about-list {
+    font-size: 14px;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+.made-with {
+    padding-top: 20px;
+    font-style: italic;
 }
