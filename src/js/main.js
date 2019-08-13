@@ -1,13 +1,28 @@
 /***** Toggle sections *****/
-const weatherMenu = document.getElementById('weather-menu'),
+const clockMenu = document.getElementById('clock-menu'),
+      weatherMenu = document.getElementById('weather-menu'),
       unitMenu = document.getElementById('unit-menu'),
       todoMenu = document.getElementById('todo-menu'),
       calculatorMenu = document.getElementById('calculator-menu'),
+      clockHandler = document.getElementsByClassName('clock')[0],
       locationHandler = document.getElementsByClassName('location')[0],
       weatherHandler = document.getElementsByClassName('weather')[0],
       unitHandler = document.getElementsByClassName('unit-convertor')[0],
       todoHandler = document.getElementsByClassName('todo')[0],
       calculatorHandler = document.getElementsByClassName('calculator')[0];
+
+function hideClockMenu() {
+  if(clockHandler.style.display === 'none') {
+    clockHandler.style.display = 'initial';
+  } else {
+    clockHandler.style.display = 'none';
+  };
+  locationHandler.style.display = 'none';
+  weatherHandler.style.display = 'none';
+  unitHandler.style.display = 'none';
+  todoHandler.style.display = 'none';
+  calculatorHandler.style.display = 'none';
+}
 
 function hideWeatherMenu() {
   if (locationHandler.style.display === 'none') {
@@ -20,6 +35,7 @@ function hideWeatherMenu() {
     } else {
     weatherHandler.style.display = 'none';
     };
+  clockHandler.style.display = 'none';
   unitHandler.style.display = 'none';
   todoHandler.style.display = 'none';
   calculatorHandler.style.display = 'none';
@@ -31,6 +47,7 @@ function hideUnitMenu() {
     } else {
     unitHandler.style.display = 'none';
     };
+  clockHandler.style.display = 'none';
   locationHandler.style.display = 'none';
   weatherHandler.style.display = 'none';
   todoHandler.style.display = 'none';
@@ -43,6 +60,7 @@ function hideTodoMenu() {
     } else {
     todoHandler.style.display = 'none';
     };
+  clockHandler.style.display = 'none';
   locationHandler.style.display = 'none';
   weatherHandler.style.display = 'none';
   unitHandler.style.display = 'none';
@@ -55,6 +73,7 @@ function hideCalculatorMenu() {
     } else {
     calculatorHandler.style.display = 'none';
     };
+  clockHandler.style.display = 'none';
   locationHandler.style.display = 'none';
   weatherHandler.style.display = 'none';
   unitHandler.style.display = 'none';
@@ -62,6 +81,7 @@ function hideCalculatorMenu() {
 };
 
 function hideShowMenus() {
+  clockMenu.addEventListener('click', hideClockMenu);
   weatherMenu.addEventListener('click', hideWeatherMenu);
   unitMenu.addEventListener('click', hideUnitMenu);
   todoMenu.addEventListener('click', hideTodoMenu);
