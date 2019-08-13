@@ -70,6 +70,9 @@ function hideShowMenus() {
 
 hideShowMenus();
 
+/***** Digital Clock *****/
+
+
 /***** Weather *****/
 window.addEventListener('load', () => {
     let longitude;
