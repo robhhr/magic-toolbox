@@ -1,14 +1,19 @@
 .about {
-    // display: none;
     font-family: 'Athiti';
     line-height: 2;
     padding: 50px;
+    @include tablet-mode {
+        text-align: center;
+    }
 }
 
 .about-list {
     font-size: 14px;
     padding-top: 20px;
     font-weight: bold;
+    @include tablet-mode {
+        font-size: 16px;
+    }
 }
 
 .made-with {

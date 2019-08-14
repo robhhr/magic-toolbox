@@ -80,28 +80,3 @@ nav {
         }
     }
 }
-
-.clock-menu {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-}
-
-.weather-menu {
-    grid-column: 3 / 4;
-    grid-row: 1 / 2;
-}
-
-.unit-menu {
-    grid-column: 3 / 4;
-    grid-row: 3 / 4;
-}
-
-.todo-menu {
-    grid-column: 1 / 2;
-    grid-row: 3 / 4;
-}
-
-.calculator-menu {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}

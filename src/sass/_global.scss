@@ -36,14 +36,15 @@ body {
 	border: 12px solid $grey;
 	// height: 100vh;
 	min-height: 100vh;
-	// max-height: 100vh;
-	// background-image: url(../../images/pattern.svg);
+	@include tablet-mode {
+		border: 20px solid $grey;
+		justify-content: center;
+	}
 }
 
 main {
 	display: flex;
 	justify-content: center;
-	// margin: 65px 0;
 	height: 400px;
 }
 
