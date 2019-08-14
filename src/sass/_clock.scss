@@ -2,6 +2,9 @@
     display: none;
     // align-self: center;
     padding-top: 80px;
+    @include tablet-mode {
+        padding-top: 120px;
+    }
 }
 
 .clock {
@@ -12,4 +15,7 @@
     background-color: $grey;
     color: $darkgrey;
     border-radius: 5px;
+    @include tablet-mode {
+        font-size: 3.75rem;
+    }
 }

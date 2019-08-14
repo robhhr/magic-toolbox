@@ -20,6 +20,13 @@ input::-webkit-inner-spin-button {
 
 .unit-convertor {
     display: none;
+    flex-direction: column;
+    @include tablet-mode {
+        flex-direction: row;
+        padding: 60px 0;
+        width: 400px;
+        justify-content: space-between;
+    }
 }
 
 .celsius, .fahrenheit {

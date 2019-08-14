@@ -59,7 +59,7 @@ function hideWeatherMenu() {
 
 function hideUnitMenu() {
   if (unitHandler.style.display === 'none') {
-    unitHandler.style.display = 'inline-block';
+    unitHandler.style.display = 'flex';
     } else {
     unitHandler.style.display = 'none';
     };

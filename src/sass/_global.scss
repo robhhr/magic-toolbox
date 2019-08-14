@@ -51,6 +51,9 @@ footer {
 	text-align: end;
 	padding: 50px 30px;
 	font-family: 'Athiti';
+	@include tablet-mode {
+		padding: 200px 100px 0 100px;
+	}
 	a {
 		text-decoration: none;
 		font-weight: bold;
