@@ -1,5 +1,9 @@
 .calculator {
     display: none;
+    grid-template-columns: repeat(4, 1fr);
+    width: 250px;
+    padding: 15px 0;
+    font-family: 'Athiti';
     // grid-template-rows: repeat(5, 1fr);
     // width: 80%;
     // margin: 0 auto;
@@ -11,5 +15,17 @@
     // }
     span {
         display: flex;
+        justify-content: center;
+        align-items: center;
     }
+}
+
+.result {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+    grid-column: 1 / 5;
+    grid-row: 1 / 2;
+    min-height: 20px;
 }

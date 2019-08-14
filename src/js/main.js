@@ -87,7 +87,7 @@ function hideTodoMenu() {
 
 function hideCalculatorMenu() {
   if (calculatorHandler.style.display === 'none') {
-    calculatorHandler.style.display = 'initial';
+    calculatorHandler.style.display = 'grid';
     } else {
     calculatorHandler.style.display = 'none';
     };
