@@ -336,7 +336,7 @@ function submit(event) {
 function addTask(task) {
     let ul = document.querySelector('.list-container');
     let li = document.createElement('li');
-    li.innerHTML = `<span class="delete">×</span><input type="checkbox"><label>${task}</label>`;
+    li.innerHTML = `<span class="delete">×</span><input type="checkbox" id="checkbox"><label>${task}</label>`;
     ul.appendChild(li);
     document.querySelector('.tasksBoard').style.display = 'block';
 };

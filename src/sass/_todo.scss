@@ -1,20 +1,48 @@
 .todo {
     display: none;
-    padding-top: 80px;
+    padding-top: 50px;
+    text-align: center;
+    font-family: 'Athiti';
+    h1 {
+        padding: 10px 0;
+    }
 }
 
 input[type="text"] {
     outline: 0;
     border: none;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-family: 'Athiti';
 }
 
-button {
+button[type="submit"] {
     outline: 0;
-    border: none;
+    border: 1px solid $button;
+    border-radius: 5px;
+    background-color: $white;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: 'Athiti';
 }
 
 .tasksBoard {
     display: none;
+    font-size: 14px;
+    text-align: left;
+}
+
+.delete {
+    color: $button;
+    font-size: 20px;
+}
+
+.list-container {
+    padding: 15px 5px;
+}
+
+#clear-list {
+    text-transform: uppercase;
 }
 
 ul {
