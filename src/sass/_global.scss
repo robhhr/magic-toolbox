@@ -34,7 +34,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	border: 12px solid $grey;
-	// height: 100vh;
 	min-height: 100vh;
 	@include tablet-mode {
 		border: 20px solid $grey;
