@@ -23,7 +23,7 @@ $ gulp
 
 * VS Code
 * HTML
-* SAS
+* Sass
 * JavaScript
 * Gulp
 
