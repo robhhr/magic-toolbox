@@ -1,148 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Multi-tool utility app with: weather, clock, calculator, todo list and unit converter!">
-    <link rel="stylesheet" href="build/css/style.min.css">
-    <link rel="icon" sizes="60x60" href="images/apple-icon-60x60.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Multi-tool utility app with: weather, clock, todo list and unit converter!"
+    />
+    <link rel="stylesheet" href="build/css/style.min.css" />
+    <link rel="icon" sizes="60x60" href="images/apple-icon-60x60.png" />
     <title>Magic Toolbox!</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="title-section">
-        <h1 id="title" class="title">Magic Toolbox</h1>
-        <h2 class="title-animated">What do you want to do?</h2>
+      <h1 id="title" class="title">Magic Toolbox</h1>
+      <h2 class="title-animated">What do you want to do?</h2>
     </div>
     <header>
-            <!-- <div class="curly-arrow"></div> -->
-        <nav>
-            <ul class="site-menu">
-                <li class="clock-menu"><a href="#clock" id="clock-menu">Digital Clock</a></li>
-                <li class="weather-menu"><a href="#weather" id="weather-menu">Weather</a></li>
-                <li class="unit-menu"><a href="#uc" id="unit-menu">Unit converter</a></li>
-                <li class="todo-menu"><a href="#todo" id="todo-menu">To-Do list</a></li>
-                <li class="calculator-menu"><a href="#calculator" id="calculator-menu">Calculator</a></li>
-            </ul>
-        </nav>
+      <nav>
+        <ul class="site-menu">
+          <li class="clock-menu">
+            <a href="#clock" id="clock-menu">Digital Clock</a>
+          </li>
+          <li class="weather-menu">
+            <a href="#weather" id="weather-menu">Weather</a>
+          </li>
+          <li class="unit-menu">
+            <a href="#uc" id="unit-menu">Unit converter</a>
+          </li>
+          <li class="todo-menu">
+            <a href="#todo" id="todo-menu">To-Do list</a>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-    <!-- About -->
-    <section id="about" class="about">
-        <p>Magic Toolbox! is a multi-tool app designed with very useful everyday utilities:</p>
+      <!-- About -->
+      <section id="about" class="about">
+        <p>
+          Magic Toolbox! is a multi-tool app designed with very useful everyday
+          utilities:
+        </p>
         <ul class="about-list">
-            <li>Digital Clock</li>
-            <li>Weather</li>
-            <li>Unit Convertor</li>
-            <li>To-do List</li>
-            <li>Digital calculator</li>
+          <li>Digital Clock</li>
+          <li>Weather</li>
+          <li>Unit Convertor</li>
+          <li>To-do List</li>
         </ul>
         <p class="made-with">Made with JavaScript, Sass, HTML, Gulp</p>
-    </section>
-    <!-- Clock -->
-        <div class="clock-container">
-            <div id="clock" class="clock">
-                <span id="hour"></span>
-                <span id="minute"></span>
-                <span id="second"></span>
-            </div>
+      </section>
+      <!-- Clock -->
+      <div class="clock-container">
+        <div id="clock" class="clock">
+          <span id="hour"></span>
+          <span id="minute"></span>
+          <span id="second"></span>
         </div>
-    <!-- Weather -->
-    <div id="location" class="location">
+      </div>
+      <!-- Weather -->
+      <div id="location" class="location">
         <h1 class="location-timezone"></h1>
         <canvas class="icon"></canvas>
         <div class="weather">
-            <div class="degree-section">
-                <h2 class="weather-degree">34</h2>&nbsp;<span class="weather-unit">°F</span>
-            </div>
-            <div class="weather-description">Weather conditions</div>
+          <div class="degree-section">
+            <h2 class="weather-degree">34</h2>
+            &nbsp;<span class="weather-unit">°F</span>
+          </div>
+          <div class="weather-description">Weather conditions</div>
         </div>
-    </div>
-    <!-- Temperature converter -->
-    <div id="uc" class="unit-convertor">
+      </div>
+      <!-- Temperature converter -->
+      <div id="uc" class="unit-convertor">
         <div class="temperature">
-            <p class="temp-description">Degree convertor</p>
-            <div class="celsius">
-                <input type="number" placeholder="°C" id="input-temp">
-            </div>
-            <div class="fahrenheit">
-                <input type="number" placeholder="°F" id="input-temp">
-            </div>
+          <p class="temp-description">Degree convertor</p>
+          <div class="celsius">
+            <input type="number" placeholder="°C" id="input-temp" />
+          </div>
+          <div class="fahrenheit">
+            <input type="number" placeholder="°F" id="input-temp" />
+          </div>
         </div>
-    <!-- Unit converter -->
+        <!-- Unit converter -->
         <div class="unit">
-            <div class="centimeters conv">
-                <p>centimeters</p>
-                <input type="number" placeholder="Centimeters" id="input-conv">
-            </div>
-            <div class="meters conv">
-                <p>meters</p>
-                <input type="number" placeholder="Meters" id="input-conv">
-            </div>
-            <div class="feet conv">
-                <p>feet</p>
-                <input type="number" placeholder="Feet" id="input-conv">
-            </div>
-            <div class="inches conv">
-                <p>inches</p>
-                <input type="number" placeholder="Inches" id="input-conv">
-            </div>
-            <div class="kilometers conv">
-                <p>kilometers</p>
-                <input type="number" placeholder="Kilometers" id="input-conv">
-            </div>
-            <div class="miles conv">
-                <p>miles</p>
-                <input type="number" placeholder="Miles" id="input-conv">
-            </div>
+          <div class="centimeters conv">
+            <p>centimeters</p>
+            <input type="number" placeholder="Centimeters" id="input-conv" />
+          </div>
+          <div class="meters conv">
+            <p>meters</p>
+            <input type="number" placeholder="Meters" id="input-conv" />
+          </div>
+          <div class="feet conv">
+            <p>feet</p>
+            <input type="number" placeholder="Feet" id="input-conv" />
+          </div>
+          <div class="inches conv">
+            <p>inches</p>
+            <input type="number" placeholder="Inches" id="input-conv" />
+          </div>
+          <div class="kilometers conv">
+            <p>kilometers</p>
+            <input type="number" placeholder="Kilometers" id="input-conv" />
+          </div>
+          <div class="miles conv">
+            <p>miles</p>
+            <input type="number" placeholder="Miles" id="input-conv" />
+          </div>
         </div>
-    </div>
-    <!-- To-do list -->
-        <div id="todo" class="todo">
-            <h1>TO-DO LIST</h1>
-            <form class="todo-form" action="index.html" method="post">
-              <input type="text" placeholder="new task" name="task">
-              <button type="submit"><strong>add item</strong></button>
-            </form>
-            <div class="tasksBoard">
-              <ul class="list-container">
-              </ul>
-              <a id="clear-list">Clear</a>
-            </div>
+      </div>
+      <!-- To-do list -->
+      <div id="todo" class="todo">
+        <h1>TO-DO LIST</h1>
+        <form class="todo-form" action="index.html" method="post">
+          <input type="text" placeholder="new task" name="task" />
+          <button type="submit"><strong>add item</strong></button>
+        </form>
+        <div class="tasksBoard">
+          <ul class="list-container"></ul>
+          <a id="clear-list">Clear</a>
         </div>
-    <!-- Calculator -->
-        <div id="calculator" class="calculator">
-            <div class="result"><p></p></div>
-
-            <span class="clear color">AC</span>
-            <span class="grey">+/-</span>
-            <span class="grey">%</span>
-            <span class="orange">÷</span>
-
-            <span>7</span>
-            <span>8</span>
-            <span>9</span>
-            <span class="orange">x</span>
-
-            <span>4</span>
-            <span>5</span>
-            <span>6</span>
-            <span class="orange">-</span>
-
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span class="orange">+</span>
-
-            <span class="zero">0</span>
-            <span>.</span>
-            <span class="orange">=</span>
-        </div>
+      </div>
     </main>
     <footer>
-            <span>Made with <span style="color: #99CFE0;">&#9829;</span> by <span><a href="https://github.com/robhhr/magic-toolbox" target="_blank" rel="noopener">Roberto H.</a></span></span>
+      <span
+        >Made with <span style="color: #99CFE0;">&#9829;</span> by
+        <span
+          ><a
+            href="https://github.com/robhhr/magic-toolbox"
+            target="_blank"
+            rel="noopener"
+            >Roberto H.</a
+          ></span
+        ></span
+      >
     </footer>
     <script src="./build/js/skycons.min.js"></script>
     <script src="./build/js/main.min.js"></script>
-</body>
+  </body>
 </html>

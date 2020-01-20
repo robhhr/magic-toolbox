@@ -4,14 +4,12 @@ const aboutMenu = document.getElementById('title'),
       weatherMenu = document.getElementById('weather-menu'),
       unitMenu = document.getElementById('unit-menu'),
       todoMenu = document.getElementById('todo-menu'),
-      calculatorMenu = document.getElementById('calculator-menu'),
       aboutHandler = document.getElementsByClassName('about')[0],
       clockHandler = document.getElementsByClassName('clock-container')[0],
       locationHandler = document.getElementsByClassName('location')[0],
       weatherHandler = document.getElementsByClassName('weather')[0],
       unitHandler = document.getElementsByClassName('unit-convertor')[0],
       todoHandler = document.getElementsByClassName('todo')[0],
-      calculatorHandler = document.getElementsByClassName('calculator')[0];
 
 function hideAboutMenu() {
   if (aboutHandler.style.display === 'none') {
@@ -22,7 +20,6 @@ function hideAboutMenu() {
   weatherHandler.style.display = 'none';
   unitHandler.style.display = 'none';
   todoHandler.style.display = 'none';
-  calculatorHandler.style.display = 'none';
 };
 
 function hideClockMenu() {
@@ -36,7 +33,6 @@ function hideClockMenu() {
   weatherHandler.style.display = 'none';
   unitHandler.style.display = 'none';
   todoHandler.style.display = 'none';
-  calculatorHandler.style.display = 'none';
 };
 
 function hideWeatherMenu() {
@@ -54,7 +50,6 @@ function hideWeatherMenu() {
   clockHandler.style.display = 'none';
   unitHandler.style.display = 'none';
   todoHandler.style.display = 'none';
-  calculatorHandler.style.display = 'none';
 };
 
 function hideUnitMenu() {
@@ -68,7 +63,6 @@ function hideUnitMenu() {
   locationHandler.style.display = 'none';
   weatherHandler.style.display = 'none';
   todoHandler.style.display = 'none';
-  calculatorHandler.style.display = 'none';
 };
 
 function hideTodoMenu() {
@@ -82,21 +76,6 @@ function hideTodoMenu() {
   locationHandler.style.display = 'none';
   weatherHandler.style.display = 'none';
   unitHandler.style.display = 'none';
-  calculatorHandler.style.display = 'none';
-};
-
-function hideCalculatorMenu() {
-  if (calculatorHandler.style.display === 'none') {
-    calculatorHandler.style.display = 'grid';
-    } else {
-    calculatorHandler.style.display = 'none';
-    };
-  aboutHandler.style.display = 'none';
-  clockHandler.style.display = 'none';
-  locationHandler.style.display = 'none';
-  weatherHandler.style.display = 'none';
-  unitHandler.style.display = 'none';
-  todoHandler.style.display = 'none';
 };
 
 function hideShowMenus() {
@@ -105,7 +84,6 @@ function hideShowMenus() {
   weatherMenu.addEventListener('click', hideWeatherMenu);
   unitMenu.addEventListener('click', hideUnitMenu);
   todoMenu.addEventListener('click', hideTodoMenu);
-  calculatorMenu.addEventListener('click', hideCalculatorMenu);
 };
 
 hideShowMenus();
@@ -369,144 +347,3 @@ function tickTask(event){
     task.style.color = "#2f4f4f";
     };
 };
-
-/***** Calculator *****/
-window.onload = function() {
-    let buttons = document.getElementsByTagName('span');
-    let result = document.querySelectorAll('.result p')[0];
-    let clear = document.getElementsByClassName('clear')[0];
-    let equation = [];
-    let orange = false;
-
-    for (var i = 0; i < buttons.length; i += 1) {
-      if (buttons[i].innerHTML === '=') {
-        buttons[i].addEventListener("click", calculate(i));
-      } else if (buttons[i].innerHTML === '+/-') {
-        buttons[i].addEventListener("click", invert(i));
-      } else if (buttons[i].innerHTML === '%') {
-        buttons[i].addEventListener("click", percent(i));
-      } else if (buttons[i].innerHTML === 'AC') {
-        equation = [];
-      } else {
-        buttons[i].addEventListener("click", addValue(i));
-      };
-    };
-
-    clear.onclick = function() {
-        result.innerHTML = '';
-        equation = [];
-        orange = false;
-    };
-
-    function addValue(i) {
-      return function() {
-        if (buttons[i].innerHTML === '÷') {
-          clicked(this);
-          changeOperators('/');
-        } else if (buttons[i].innerHTML === 'x') {
-          clicked(this);
-          changeOperators('*');
-        } else if (buttons[i].innerHTML === '+') {
-          clicked(this);
-          changeOperators('+');
-        } else if (buttons[i].innerHTML === '-') {
-          clicked(this);
-          changeOperators('-');
-        } else {
-          removeClicked();
-          if (checkType(equation[equation.length - 1])) {
-            equation = [];
-            equation.push(buttons[i].innerHTML);
-            orange = true;
-          } else {
-            equation.push(buttons[i].innerHTML);
-          }
-          if (orange) {
-            result.innerHTML = buttons[i].innerHTML;
-          } else {
-            result.innerHTML += buttons[i].innerHTML;
-          }
-          orange = false;
-        }
-      };
-    }
-
-    function clicked(i) {
-      removeClicked(i);
-      i.classList.add('clicked');
-    }
-
-    function removeClicked(i) {
-      var elems = document.querySelectorAll(".clicked");
-      [].forEach.call(elems, function(el) {
-        el.classList.remove("clicked");
-      });
-    }
-
-    function calculate(i) {
-      return function() {
-        if (equation.length == 0) {
-          return;
-        } else {
-          var answer = eval(equation.join(''));
-          if (answer % 1 === 0) {
-            result.innerHTML = answer;
-          } else {
-            result.innerHTML = answer.toFixed(4);
-          }
-          equation = [];
-          equation.push(answer);
-          orange = false;
-        }
-      };
-    }
-
-    function invert(i) {
-      return function() {
-        if (equation.length == 0) {
-          return;
-        } else {
-          var number = result.innerHTML;
-          addToOperations(number);
-          var invert = number * -1;
-          equation.push(invert);
-          result.innerHTML = invert;
-        }
-      }
-    }
-
-    function percent(i) {
-      return function() {
-        var number = result.innerHTML;
-        addToOperations(number);
-        var percent = number * 0.01;
-        equation.push(percent);
-        result.innerHTML = percent.toFixed(2);
-      }
-    }
-
-    function changeOperators(str) {
-      if (!orange) {
-        equation.push(str);
-        orange = true;
-      } else {
-        equation.pop();
-        equation.push(str);
-      }
-    }
-
-    function checkType(v) {
-      if (typeof v == 'string') {
-        return false;
-      } else if (typeof v == 'number') {
-        return true;
-      }
-    }
-
-    function addToOperations(number) {
-      var arr = number.split('');
-      for (i = 0; i < arr.length; i++) {
-        equation.pop();
-      }
-    }
-  };
