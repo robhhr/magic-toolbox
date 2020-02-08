@@ -4,11 +4,10 @@
 
 ## Magic ToolBox! 🧙
 
-<<<<<<< HEAD
 Magic Toolbox! is a multi-tool app designed with very useful everyday utilities: Digital Clock, Weather, Unit Convertor and To-do list.
 
 Made with JavaScript, Sass, HTML, Gulp.
-=======
+
 Magic Toolbox! is a multi-tool app designed with the following useful everyday utilities: 
 * Digital Clock
 * Weather
@@ -17,7 +16,6 @@ Magic Toolbox! is a multi-tool app designed with the following useful everyday u
 * Digital Calculator
 
 Made with JavaScript, Sass, HTML, Gulp
->>>>>>> 4f610caa8177374dbc515ab3ac593779223922eb
 
 ## Installation
 
